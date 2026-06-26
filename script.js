@@ -4,6 +4,20 @@
    Tema: Batik Keraton Yogyakarta
 ═══════════════════════════════════════════════════════════ */
 
+// --- TARUH DI BARIS PALING ATAS SCRIPT.JS ---
+
+const SUPABASE_URL = 'https://tkswcopykzixfhfdfwcy.supabase.co';
+// GUNAKAN PUBLISHABLE KEY (sb_publishable...), BUKAN SECRET KEY
+const SUPABASE_KEY = 'sb_publishable_C6jGBnFCtq_tJZTMW7LhZA_vuj-p_w3'; 
+
+// Inisialisasi dengan pengecekan agar tidak bikin tombol mati
+let db;
+try {
+    db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    console.log("PostgreSQL Connected!");
+} catch (e) {
+    console.error("Koneksi Database Gagal, tapi sistem navigasi tetap jalan.", e);
+}
 /* ─── MAPBOX TOKEN ────────────────────────────────────────── */
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZGhybjIxIiwiYSI6ImNtbm9meDNxcTI0Y2sycXEyaG43dnJqajIifQ.p1s6U3VJQR6jJu0kSN2WLQ';
 mapboxgl.accessToken = MAPBOX_TOKEN;
@@ -693,20 +707,16 @@ function updateFeedbackBadge() {
 
 
 /* ═══════════════════════════════════════════════════════════
-   ADMIN PANEL — TAMBAH TITIK BARU
+   ADMIN PANEL — TAMBAH TITIK BARU (POSTGRESQL VERSION)
 ═══════════════════════════════════════════════════════════ */
 
 function openTambahTitik() {
-  // SATPAM: Cek apakah user benar-benar admin
   if (!currentUser || currentUser.role !== 'admin') {
     alert("Akses ditolak! Fitur ini hanya untuk Admin.");
     return;
   }
-  ['at-nama','at-lng','at-lat','at-jam','at-lantai','at-deskripsi'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.value = '';
-  });
-  ['at-kategori','at-status','at-kondisi'].forEach(id => {
+  // Reset Form
+  ['at-nama','at-lng','at-lat','at-jam','at-lantai', 'at-deskripsi'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
@@ -718,7 +728,8 @@ function closeTambahTitik() {
   document.getElementById('modal-tambah').style.display = 'none';
 }
 
-function simpanTitikBaru() {
+// FUNGSI UTAMA: SIMPAN KE SUPABASE
+async function simpanTitikBaru() {
   const nama      = document.getElementById('at-nama').value.trim();
   const kategori  = document.getElementById('at-kategori').value;
   const lngVal    = document.getElementById('at-lng').value.trim();
@@ -730,138 +741,188 @@ function simpanTitikBaru() {
     errEl.style.display = 'block';
     return;
   }
-  const lng = parseFloat(lngVal);
-  const lat = parseFloat(latVal);
-  if (isNaN(lng) || isNaN(lat) || lng < 105 || lng > 115 || lat < -9 || lat > -6) {
-    errEl.textContent = '⚠ Koordinat tidak valid. Pastikan dalam rentang wilayah DIY.';
-    errEl.style.display = 'block';
-    return;
-  }
 
-  const newFeature = {
-    type: 'Feature',
-    geometry: { type: 'Point', coordinates: [lng, lat] },
-    properties: {
-      nama            : nama,
-      kategori        : kategori,
-      status          : document.getElementById('at-status').value || '-',
-      jumlah_lantai   : parseInt(document.getElementById('at-lantai').value) || null,
-      jam_operasional : document.getElementById('at-jam').value.trim() || '-',
-      kondisi         : document.getElementById('at-kondisi').value || '-',
-      deskripsi       : document.getElementById('at-deskripsi').value.trim() || '',
-      _custom         : true,
-    }
+  const dataKeDatabase = {
+    nama: nama,
+    kategori: kategori,
+    lng: parseFloat(lngVal),
+    lat: parseFloat(latVal),
+    status: document.getElementById('at-status').value || '-',
+    jumlah_lantai: parseInt(document.getElementById('at-lantai').value) || 1,
+    jam_operasional: document.getElementById('at-jam').value.trim() || '-',
+    kondisi: document.getElementById('at-kondisi').value || '-',
+    deskripsi: document.getElementById('at-deskripsi').value.trim() || ''
   };
 
-  const existing = JSON.parse(localStorage.getItem('admin-titik-custom') || '[]');
-  existing.push(newFeature);
-  localStorage.setItem('admin-titik-custom', JSON.stringify(existing));
+  try {
+    // 1. KIRIM KE POSTGRESQL (Supabase)
+    const { error } = await supabase.from('bangunan').insert([dataKeDatabase]);
 
-  injectCustomTitikKeMap(newFeature);
-  closeTambahTitik();
-  showToastAdmin('✓ Titik "' + nama + '" berhasil ditambahkan!');
-}
+    if (error) throw error;
 
-function injectCustomTitikKeMap(feature) {
-  [map1, map2].forEach(function(m) {
-    if (!m) return;
-    try {
-      ['titik-info','titik-info-3d'].forEach(function(srcId) {
-        const src = m.getSource(srcId);
-        if (!src) return;
-        const data = src._data || { type:'FeatureCollection', features:[] };
-        if (!data.features) data.features = [];
-        data.features.push(feature);
-        src.setData(data);
-      });
-    } catch(e) {}
-  });
-  if (geojsonCache.bangunan) {
-    geojsonCache.bangunan.features.push(feature);
+    // 2. Jika Berhasil
+    closeTambahTitik();
+    showToastAdmin('✓ Berhasil menyimpan ke PostgreSQL!');
+    
+    // Refresh peta agar titik muncul (panggil fungsi load ulang)
+    setTimeout(() => { location.reload(); }, 1500);
+
+  } catch (err) {
+    console.error(err);
+    errEl.textContent = '❌ Gagal: ' + err.message;
+    errEl.style.display = 'block';
   }
-}
-
-function loadCustomTitikFromStorage() {
-  const list = JSON.parse(localStorage.getItem('admin-titik-custom') || '[]');
-  list.forEach(function(f) { injectCustomTitikKeMap(f); });
 }
 
 
 /* ═══════════════════════════════════════════════════════════
-   ADMIN PANEL — LIHAT FEEDBACK
+ADMIN PANEL — TAMBAH TITIK BARU
 ═══════════════════════════════════════════════════════════ */
-
+function openTambahTitik() {
+// SATPAM: Cek apakah user benar-benar admin
+if (!currentUser || currentUser.role !== 'admin') {
+alert("Akses ditolak! Fitur ini hanya untuk Admin.");
+return;
+}
+['at-nama','at-lng','at-lat','at-jam','at-lantai','at-deskripsi'].forEach(id => {
+const el = document.getElementById(id);
+if (el) el.value = '';
+});
+['at-kategori','at-status','at-kondisi'].forEach(id => {
+const el = document.getElementById(id);
+if (el) el.value = '';
+});
+document.getElementById('at-error').style.display = 'none';
+document.getElementById('modal-tambah').style.display = 'flex';
+}
+function closeTambahTitik() {
+document.getElementById('modal-tambah').style.display = 'none';
+}
+function simpanTitikBaru() {
+const nama      = document.getElementById('at-nama').value.trim();
+const kategori  = document.getElementById('at-kategori').value;
+const lngVal    = document.getElementById('at-lng').value.trim();
+const latVal    = document.getElementById('at-lat').value.trim();
+const errEl     = document.getElementById('at-error');
+if (!nama || !kategori || !lngVal || !latVal) {
+errEl.textContent = '⚠ Nama, Kategori, Longitude, dan Latitude wajib diisi.';
+errEl.style.display = 'block';
+return;
+}
+const lng = parseFloat(lngVal);
+const lat = parseFloat(latVal);
+if (isNaN(lng) || isNaN(lat) || lng < 105 || lng > 115 || lat < -9 || lat > -6) {
+errEl.textContent = '⚠ Koordinat tidak valid. Pastikan dalam rentang wilayah DIY.';
+errEl.style.display = 'block';
+return;
+}
+const newFeature = {
+type: 'Feature',
+geometry: { type: 'Point', coordinates: [lng, lat] },
+properties: {
+nama            : nama,
+kategori        : kategori,
+status          : document.getElementById('at-status').value || '-',
+jumlah_lantai   : parseInt(document.getElementById('at-lantai').value) || null,
+jam_operasional : document.getElementById('at-jam').value.trim() || '-',
+kondisi         : document.getElementById('at-kondisi').value || '-',
+deskripsi       : document.getElementById('at-deskripsi').value.trim() || '',
+_custom         : true,
+}
+};
+const existing = JSON.parse(localStorage.getItem('admin-titik-custom') || '[]');
+existing.push(newFeature);
+localStorage.setItem('admin-titik-custom', JSON.stringify(existing));
+injectCustomTitikKeMap(newFeature);
+closeTambahTitik();
+showToastAdmin('✓ Titik "' + nama + '" berhasil ditambahkan!');
+}
+function injectCustomTitikKeMap(feature) {
+[map1, map2].forEach(function(m) {
+if (!m) return;
+try {
+['titik-info','titik-info-3d'].forEach(function(srcId) {
+const src = m.getSource(srcId);
+if (!src) return;
+const data = src._data || { type:'FeatureCollection', features:[] };
+if (!data.features) data.features = [];
+data.features.push(feature);
+src.setData(data);
+});
+} catch(e) {}
+});
+if (geojsonCache.bangunan) {
+geojsonCache.bangunan.features.push(feature);
+}
+}
+function loadCustomTitikFromStorage() {
+const list = JSON.parse(localStorage.getItem('admin-titik-custom') || '[]');
+list.forEach(function(f) { injectCustomTitikKeMap(f); });
+}
+/* ═══════════════════════════════════════════════════════════
+ADMIN PANEL — LIHAT FEEDBACK
+═══════════════════════════════════════════════════════════ */
 function openLihatFeedback() {
-  renderFeedbackList();
-  document.getElementById('modal-feedback').style.display = 'flex';
+renderFeedbackList();
+document.getElementById('modal-feedback').style.display = 'flex';
 }
-
 function closeLihatFeedback() {
-  document.getElementById('modal-feedback').style.display = 'none';
+document.getElementById('modal-feedback').style.display = 'none';
 }
-
 function renderFeedbackList() {
-  const list = JSON.parse(localStorage.getItem('feedback-sorosutan') || '[]');
-  const container = document.getElementById('feedback-list-container');
-
-  if (list.length === 0) {
-    container.innerHTML = '<div class="feedback-empty"><i class="fas fa-inbox"></i><p>Belum ada feedback yang masuk.</p></div>';
-    return;
-  }
-
-  const sorted = list.slice().reverse();
-  let rows = '';
-  sorted.forEach(function(f, i) {
-    rows += '<tr>' +
-      '<td>' + (sorted.length - i) + '</td>' +
-      '<td>' + escHtml(f.nama || '-') + '</td>' +
-      '<td>' + escHtml(f.instansi || '-') + '</td>' +
-      '<td class="feedback-saran">' + escHtml(f.saran || '-') + '</td>' +
-      '<td class="feedback-waktu">' + escHtml(f.waktu || '-') + '</td>' +
-      '<td><button class="btn-hapus-row" onclick="hapusFeedbackByIndex(' + (list.length - 1 - i) + ')" title="Hapus"><i class="fas fa-trash-alt"></i></button></td>' +
-      '</tr>';
-  });
-
-  container.innerHTML = '<p class="feedback-count">Total: <b>' + list.length + '</b> feedback</p>' +
-    '<div class="feedback-table-wrap"><table class="feedback-table">' +
-    '<thead><tr><th>#</th><th>Nama</th><th>Instansi</th><th>Saran / Masukan</th><th>Waktu</th><th></th></tr></thead>' +
-    '<tbody>' + rows + '</tbody></table></div>';
+const list = JSON.parse(localStorage.getItem('feedback-sorosutan') || '[]');
+const container = document.getElementById('feedback-list-container');
+if (list.length === 0) {
+container.innerHTML = '<div class="feedback-empty"><i class="fas fa-inbox"></i><p>Belum ada feedback yang masuk.</p></div>';
+return;
 }
-
+const sorted = list.slice().reverse();
+let rows = '';
+sorted.forEach(function(f, i) {
+rows += '<tr>' +
+'<td>' + (sorted.length - i) + '</td>' +
+'<td>' + escHtml(f.nama || '-') + '</td>' +
+'<td>' + escHtml(f.instansi || '-') + '</td>' +
+'<td class="feedback-saran">' + escHtml(f.saran || '-') + '</td>' +
+'<td class="feedback-waktu">' + escHtml(f.waktu || '-') + '</td>' +
+'<td><button class="btn-hapus-row" onclick="hapusFeedbackByIndex(' + (list.length - 1 - i) + ')" title="Hapus"><i class="fas fa-trash-alt"></i></button></td>' +
+'</tr>';
+});
+container.innerHTML = '<p class="feedback-count">Total: <b>' + list.length + '</b> feedback</p>' +
+'<div class="feedback-table-wrap"><table class="feedback-table">' +
+'<thead><tr><th>#</th><th>Nama</th><th>Instansi</th><th>Saran / Masukan</th><th>Waktu</th><th></th></tr></thead>' +
+'<tbody>' + rows + '</tbody></table></div>';
+}
 function hapusFeedbackByIndex(idx) {
-  const list = JSON.parse(localStorage.getItem('feedback-sorosutan') || '[]');
-  list.splice(idx, 1);
-  localStorage.setItem('feedback-sorosutan', JSON.stringify(list));
-  updateFeedbackBadge();
-  renderFeedbackList();
+const list = JSON.parse(localStorage.getItem('feedback-sorosutan') || '[]');
+list.splice(idx, 1);
+localStorage.setItem('feedback-sorosutan', JSON.stringify(list));
+updateFeedbackBadge();
+renderFeedbackList();
 }
-
 function hapusSemuaFeedback() {
-  if (!confirm('Yakin ingin menghapus SEMUA feedback? Tindakan ini tidak bisa dibatalkan.')) return;
-  localStorage.removeItem('feedback-sorosutan');
-  updateFeedbackBadge();
-  renderFeedbackList();
+if (!confirm('Yakin ingin menghapus SEMUA feedback? Tindakan ini tidak bisa dibatalkan.')) return;
+localStorage.removeItem('feedback-sorosutan');
+updateFeedbackBadge();
+renderFeedbackList();
 }
-
 function escHtml(str) {
-  return String(str)
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+return String(str)
+.replace(/&/g,'&').replace(/</g,'<')
+.replace(/>/g,'>').replace(/"/g,'"');
 }
-
 function showToastAdmin(msg) {
-  var toast = document.getElementById('admin-toast');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'admin-toast';
-    toast.className = 'admin-toast';
-    document.body.appendChild(toast);
-  }
-  toast.textContent = msg;
-  toast.classList.add('show');
-  setTimeout(function() { toast.classList.remove('show'); }, 3000);
+var toast = document.getElementById('admin-toast');
+if (!toast) {
+toast = document.createElement('div');
+toast.id = 'admin-toast';
+toast.className = 'admin-toast';
+document.body.appendChild(toast);
 }
-
+toast.textContent = msg;
+toast.classList.add('show');
+setTimeout(function() { toast.classList.remove('show'); }, 3000);
+}
 
 
 /* ═══════════════════════════════════════════════════════════
