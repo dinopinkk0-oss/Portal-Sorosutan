@@ -1,0 +1,725 @@
+{
+  "type": "FeatureCollection",
+  "name": "bangunan_sorosutan",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Toko Sayur Bu Asih",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Sendiri",
+        "jam_operasional": "05.00 - 12.00",
+        "deskripsi": "Toko sayur dan kebutuhan dapur harian milik warga lokal yang melayani kebutuhan rumah tangga."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3849,
+          -7.8288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Masjid Sulthonain Nitikan",
+        "kategori": "Ibadah",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Keraton",
+        "jam_operasional": "05.00 - 21.00",
+        "deskripsi": "Masjid bersejarah peninggalan Kerajaan Mataram, merupakan Bangunan Cagar Budaya yang dikelola bersama Kasultanan Yogyakarta dan Kasunanan Surakarta."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.38443,
+          -7.82765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SD Muhammadiyah Nitikan",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Swasta",
+        "jam_operasional": "07.00 - 15.00",
+        "deskripsi": "Sekolah Dasar Islam Muhammadiyah dengan akreditasi A, melayani 674 siswa dengan kurikulum berbasis nilai-nilai agama Islam."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.379145,
+          -7.823745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SMK Muhammadiyah 1 Yogyakarta",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 3,
+        "status": "Swasta",
+        "jam_operasional": "07.00 - 15.30",
+        "deskripsi": "Sekolah Menengah Kejuruan Muhammadiyah yang berlokasi di Jl. Nitikan No. 48, Sorosutan."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3865,
+          -7.8272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SMA IT Bina Anak Sholeh",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Swasta",
+        "jam_operasional": "07.00 - 15.30",
+        "deskripsi": "Sekolah Menengah Atas Islam Terpadu Bina Anak Sholeh berlokasi di Jl. P. Wirosobo Sorosutan."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3858,
+          -7.829
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "KB Islam Safa",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Swasta",
+        "jam_operasional": "07.30 - 11.00",
+        "deskripsi": "Kelompok Bermain Islam Safa berlokasi di Jl. Nitikan Baru No. 98, Sorosutan."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.386,
+          -7.8283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Kantor Kelurahan Sorosutan",
+        "kategori": "Fasilitas Umum",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Pemerintah",
+        "jam_operasional": "08.00 - 16.00",
+        "deskripsi": "Pusat pemerintahan Kelurahan Sorosutan terletak di Jl. Gurami No. 236, Nitikan. Melayani administrasi kependudukan dan keperluan warga."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3848,
+          -7.8302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Pasar Sultan Nitikan",
+        "kategori": "Fasilitas Umum",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Pemerintah",
+        "jam_operasional": "05.00 - 12.00",
+        "deskripsi": "Pasar tradisional di kawasan Nitikan yang menjadi pusat kegiatan ekonomi warga Sorosutan."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3855,
+          -7.8275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Masjid Muthohirin Nitikan",
+        "kategori": "Ibadah",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Wakaf",
+        "jam_operasional": "04.30 - 21.00",
+        "deskripsi": "Masjid warga yang berlokasi di Jl. Sorogenen No. 25, Nitikan, Sorosutan."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3843,
+          -7.8278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "KB Aisyiyah Melati Nitikan",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Swasta",
+        "jam_operasional": "07.30 - 11.00",
+        "deskripsi": "Kelompok Bermain Aisyiyah Melati berlokasi di Jl. Sorogenen No. 25, Sorosutan."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3845,
+          -7.8281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Masjid Al-Ishlah",
+        "kategori": "Ibadah",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Wakaf",
+        "jam_operasional": "24 Jam",
+        "deskripsi": "Masjid di Jl. Nitikan Baru UH VI No.378, Sorosutan, dilengkapi AC dan kipas angin, parkir luas."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.38309969999999, -7.826924999999998] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Mushola Al Huda",
+        "kategori": "Ibadah",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Wakaf",
+        "jam_operasional": "24 Jam",
+        "deskripsi": "Mushola warga di kawasan Tempel Sorosutan, bersih dan nyaman untuk ibadah harian."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3841662, -7.825880700000001] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Mushola Al Badr",
+        "kategori": "Ibadah",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Wakaf",
+        "jam_operasional": "24 Jam",
+        "deskripsi": "Mushola di Jl. Sorosutan No.49, Sorosutan, Umbulharjo."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3788868, -7.8219169] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Masjid ALJUMAL",
+        "kategori": "Ibadah",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Wakaf",
+        "jam_operasional": "24 Jam",
+        "deskripsi": "Masjid warga di kawasan utara Sorosutan, nyaman dan bersih."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3781745, -7.814733499999999] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Mushola Al-Multazam",
+        "kategori": "Ibadah",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Wakaf",
+        "jam_operasional": "24 Jam",
+        "deskripsi": "Mushola di Jl. Tritunggal No.4, Sorosutan."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3754252, -7.8252854] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Masjid At-Taubah Sorosutan",
+        "kategori": "Ibadah",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Wakaf",
+        "jam_operasional": "24 Jam",
+        "deskripsi": "Masjid di Jl. Garuda No.911 RT.17/RW.05, Sorosutan, dilengkapi AC dan generator."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.37911729999999, -7.8214165] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Sekolah Alam Beniso",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Swasta",
+        "jam_operasional": "07.00 - 16.00",
+        "deskripsi": "Sekolah alam PAUD dan TK di perumahan Wirosaban Baru Blok D9, Sorosutan, menekankan pendekatan belajar berbasis alam."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.378445, -7.8274333] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SD PIRI Nitikan",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Swasta",
+        "jam_operasional": "07.00 - 12.00",
+        "deskripsi": "Sekolah Dasar PIRI berlokasi di Jl. Nitikan Baru UH VI No.55, Sorosutan."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3823793, -7.8225085000000005] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SD Muhammadiyah Kranon Nitikan",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Swasta",
+        "jam_operasional": "07.00 - 14.30",
+        "deskripsi": "Sekolah Dasar Muhammadiyah berlokasi di Jl. Kranon Nitikan No.UH 6, Sorosutan."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3856483, -7.829443700000001] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SMP Negeri 10 Yogyakarta",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 3,
+        "status": "Negeri",
+        "jam_operasional": "06.05 - 15.00",
+        "deskripsi": "Sekolah Menengah Pertama Negeri 10 di Jl. Tritunggal No.2, Sorosutan."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3758, -7.824595999999999] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "RSUD Kota Yogyakarta (RS Wirosaban)",
+        "kategori": "Kesehatan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 5,
+        "status": "Pemerintah",
+        "jam_operasional": "24 Jam",
+        "deskripsi": "Rumah Sakit Umum Daerah Kota Yogyakarta di Jl. Ki Ageng Pemanahan No.1-6, Sorosutan. Melayani pasien BPJS dan umum."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.377867, -7.824967999999999] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Warung Makan Bu Muji",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Sendiri",
+        "jam_operasional": "07.00 - 17.00",
+        "deskripsi": "Warung makan prasmanan Jawa di Jl. Sorogenen No.11A, Sorosutan. Terkenal dengan sambal mentah dan harga terjangkau."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.38165289999999, -7.8248016] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Warung Makan Bejo Josss",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Sendiri",
+        "jam_operasional": "09.00 - 20.00",
+        "deskripsi": "Warung makan di Jl. Sorogenen, Sorosutan. Menu beragam dan porsi besar, populer di kalangan mahasiswa."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3793575, -7.8248568999999994] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Rata Rata Restaurant",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Komersial",
+        "jam_operasional": "05.30 - 17.30",
+        "deskripsi": "Restoran masakan Indonesia di Jl. Lowanu No.101a, Sorosutan. Buka setiap hari dengan harga terjangkau."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.377225, -7.821363400000001] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Pempek Yuk Titi Sorosutan",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Komersial",
+        "jam_operasional": "07.00 - 23.30",
+        "deskripsi": "Gerai pempek di Jl. Sorogenen No.21, Sorosutan. Salah satu cabang terbaik dengan pelayanan dan porsi memuaskan."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.38294499999999, -7.825098799999999] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Dapur Asyiik",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Sendiri",
+        "jam_operasional": "11.00 - 20.00",
+        "deskripsi": "Warung makan di Jl. Sorogenen No.26b, Sorosutan. Terkenal dengan ayam geprek dan sop iga lezat."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.38120889999999, -7.824890900000001] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Sop Merah",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Komersial",
+        "jam_operasional": "09.30 - 21.30",
+        "deskripsi": "Kedai sop ayam kuah merah di Jl. Sorogenen No.2, Sorosutan. Salah satu kuliner ikonik Yogyakarta."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3787291, -7.824969599999999] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "LESEHAN GANGSAR GK",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Sendiri",
+        "jam_operasional": "10.00 - 22.30",
+        "deskripsi": "Lesehan di Jl. Sorogenen No.13, Sorosutan. Terkenal dengan lele bakar dan harga sangat terjangkau."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3830045, -7.8251559] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Ayam Goreng Bu Tini Lowanu",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Komersial",
+        "jam_operasional": "09.00 - 20.30",
+        "deskripsi": "Restoran ayam goreng legendaris di Jl. Lowanu No.62, Sorosutan. Terkenal dengan ayam goreng gurih khas Yogyakarta."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.37687129999999, -7.8218351] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Toko Lukito",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Sendiri",
+        "jam_operasional": "07.30 - 20.00",
+        "deskripsi": "Toko kelontong di Jl. Pakel Baru Selatan No.15a, Sorosutan, menyediakan sembako dan kebutuhan harian."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3797476, -7.8220399999999985] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "AF Yogyakarta",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Komersial",
+        "jam_operasional": "08.00 - 17.00",
+        "deskripsi": "Toko di Jl. Sorogenen No.36, Sorosutan, menyediakan berbagai produk dengan harga terjangkau."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3852314, -7.825425099999999] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Toko Kelontong Bu Kris",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Sendiri",
+        "jam_operasional": "08.00 - 20.00",
+        "deskripsi": "Toko kelontong di Jl. Sorosutan, menyediakan sembako dan gas LPG untuk warga sekitar."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.37934899999999, -7.820839] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Toko Kelontong Bu Pri",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Sendiri",
+        "jam_operasional": "08.00 - 20.00",
+        "deskripsi": "Toko kelontong di Jl. Sorosutan, menjadi langganan warga dan mahasiswa kos sekitar."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.37868630000001, -7.8235272] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Pamella Eight Supermarket",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Komersial",
+        "jam_operasional": "07.30 - 21.30",
+        "deskripsi": "Supermarket Pamella cabang 8 di Jl. Lowanu No.88, Sorosutan. Menyediakan kebutuhan lengkap warga."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.378018, -7.824414999999999] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "TokoMu Nitikan",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Komersial",
+        "jam_operasional": "07.00 - 21.00",
+        "deskripsi": "Minimarket Muhammadiyah di Jl. Sorogenen No.25, Sorosutan, melayani kebutuhan harian warga."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3839707, -7.8251409] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Toko Mbak Painah",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Sendiri",
+        "jam_operasional": "08.00 - 21.00",
+        "deskripsi": "Toko kelontong di Jl. Sorosutan, menyediakan kebutuhan harian, gas, dan air galon."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3783574, -7.817209099999999] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Toko 99",
+        "kategori": "Bisnis/UMKM",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Milik Sendiri",
+        "jam_operasional": "08.00 - 20.00",
+        "deskripsi": "Toko kelontong di Jl. Ki Ageng Pemanahan, Sorosutan, berlokasi strategis dekat RS Wirosaban."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.37978500000001, -7.8284119] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SMA BIAS Yogyakarta",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Swasta",
+        "jam_operasional": "07.00 - 16.00",
+        "deskripsi": "SMA Islam Terpadu BIAS berlokasi di Jl. Pangeran Wirosobo No.17, Sorosutan. Menyelenggarakan pendidikan berbasis nilai Islam."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.37768129999999, -7.826883] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Daycare/KB/TK Inklusi Pelangi Anak Negeri",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Swasta",
+        "jam_operasional": "06.30 - 15.00",
+        "deskripsi": "Sekolah inklusif PAUD, KB, dan TK di Jl. Sorosutan No.25b, menerima anak berkebutuhan khusus dengan fasilitas lengkap."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3788216, -7.8199331] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "TK Bumi Warta dan TPA Bumi Warta Ceria",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Swasta",
+        "jam_operasional": "07.00 - 15.00",
+        "deskripsi": "Taman Kanak-Kanak dan Taman Pendidikan Al-Qur'an di kawasan Sorosutan, Umbulharjo."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.37985730000001, -7.818412400000001] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "TK Negeri 11 Yogyakarta",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Negeri",
+        "jam_operasional": "07.00 - 15.00",
+        "deskripsi": "Taman Kanak-Kanak Negeri 11 di Jl. Sorosutan No.26, Sorosutan, Umbulharjo."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.378448, -7.820214499999999] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SMP PIRI 2 Yogyakarta",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Swasta",
+        "jam_operasional": "06.00 - 16.00",
+        "deskripsi": "Sekolah Menengah Pertama PIRI 2 di Jalan Nalen No.1, Sorosutan, Umbulharjo."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.383682, -7.822755] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SMP Perintis Yogyakarta",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Swasta",
+        "jam_operasional": "07.00 - 14.30",
+        "deskripsi": "Sekolah Menengah Pertama Perintis di Jl. Pangeran Wirosobo No.30b, Sorosutan, Umbulharjo."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3772944, -7.8297067] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SD Negeri Wirosaban",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Negeri",
+        "jam_operasional": "07.00 - 14.00",
+        "deskripsi": "Sekolah Dasar Negeri Wirosaban di Jl. Pangeran Wirosobo Blok UH VI No.609, Sorosutan."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3783616, -7.8290502] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Masjid Ar-Ridho Sorosutan",
+        "kategori": "Ibadah",
+        "kondisi": "Baik",
+        "jumlah_lantai": 1,
+        "status": "Wakaf",
+        "jam_operasional": "24 Jam",
+        "deskripsi": "Masjid di Jl. Sorogenen No.1, Sorosutan. Ber-AC, bersih, dan berlokasi dekat RSUD Wirosaban."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3789333, -7.824680300000001] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "Masjid Wirotunggal",
+        "kategori": "Ibadah",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Wakaf",
+        "jam_operasional": "24 Jam",
+        "deskripsi": "Masjid 2 lantai di Jl. Pangeran Wirosobo, Sorosutan. Dilengkapi AC, parkir luas, dan berdiri sejak 1975."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.37758009999999, -7.8298492999999985] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "SD Negeri Pakel",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 2,
+        "status": "Negeri",
+        "jam_operasional": "07.00 - 14.00",
+        "deskripsi": "Sekolah Dasar Negeri Pakel di Jl. Tritunggal No.27, Sorosutan, Umbulharjo."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.37597199999999, -7.824597] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "nama": "STIE Widya Wiwaha",
+        "kategori": "Pendidikan",
+        "kondisi": "Baik",
+        "jumlah_lantai": 4,
+        "status": "Swasta",
+        "jam_operasional": "08.00 - 19.00",
+        "deskripsi": "Sekolah Tinggi Ilmu Ekonomi Widya Wiwaha di Jl. Lowanu UH VI/20, Sorosutan. Perguruan tinggi ekonomi swasta di Yogyakarta."
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3774742, -7.8221737] }
+    }
+     ]
+}
